@@ -520,6 +520,69 @@
     clip: rect(0 0 0 0);
     white-space: nowrap;
   }
+
+  /* Inserted photo styling (additive, does not alter existing rules) */
+  .hero-photo {
+    margin-top: 2.5rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+  }
+  .about-photo {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1.75rem;
+    border: 1px solid var(--border);
+  }
+  .about-photo img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 700px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .gallery-grid figure {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery-grid figcaption {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    background: var(--off-white);
+  }
+  .map-photo {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 1rem;
+  }
+  .map-photo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
 </style>
 </head>
 <body>
@@ -567,6 +630,9 @@
         <div><strong>Portage, IN</strong>Locally operated shop</div>
         <div><strong>US-6</strong>Easy to find, easy to reach</div>
         <div><strong>Insurance</strong>Claim assistance included</div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1769021955466-ed4372792114" alt="Vehicle undergoing collision repair at Kustom Auto Body">
       </div>
     </div>
   </section>
@@ -618,6 +684,21 @@
 
       </div>
 
+      <div class="gallery-grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1762049297259-f9fdd460ec99" alt="Technician performing dent and bodywork repair">
+          <figcaption>Auto body &amp; dent repair</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1760804462215-66e779745171" alt="Fresh paint and refinishing work on a vehicle panel">
+          <figcaption>Paint &amp; refinishing</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1727893304219-063d142ce6f3" alt="Frame straightening equipment in the shop">
+          <figcaption>Frame straightening</figcaption>
+        </figure>
+      </div>
+
       <div class="specialty-strip">
         <div>
           <h3>Custom Bodywork &amp; Restoration</h3>
@@ -636,6 +717,9 @@
       <div class="about-copy">
         <p class="section-head tag" style="margin-bottom:0.5rem;">Who We Are</p>
         <h2 style="font-size:clamp(1.6rem,4vw,2.2rem); margin-bottom:1rem;">A Local Shop That Does the Work Right</h2>
+        <div class="about-photo">
+          <img src="https://images.unsplash.com/photo-1769396377479-84ea885017cc" alt="Kustom Auto Body shop team working on a customer's vehicle">
+        </div>
         <p>Kustom Auto Body is based right on US-6 in Portage, serving drivers throughout Northwest Indiana. We're not a franchise and we're not a big-box chain &mdash; we're a local shop that repairs cars the way they should be repaired.</p>
         <p>If your vehicle needs collision work, bodywork, or a repaint after an accident, bring it in and we'll give you a straight answer on what it needs and what it'll cost.</p>
         <ul class="about-list">
@@ -716,6 +800,9 @@
           <h3>Find Us on US-6</h3>
           <p>Kustom Auto Body sits on the US-6 corridor in Portage, convenient to drivers from across Northwest Indiana. Bring your vehicle in for a hands-on look and an honest estimate.</p>
           <p><strong>5409 US-6, Portage, IN 46368</strong></p>
+          <div class="map-photo">
+            <img src="https://images.unsplash.com/photo-1727893294198-e85137574f5b" alt="Exterior view of the Kustom Auto Body shop on US-6">
+          </div>
         </div>
       </div>
     </div>
