@@ -1,0 +1,29 @@
+{
+  "candidates": [
+    {
+      "url": "https://images.unsplash.com/photo-1769021955466-ed4372792114",
+      "alt": "Car body being spot welded in a workshop"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1769396377479-84ea885017cc",
+      "alt": "Retro neon sign for a superior auto body shop at dusk"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1762049297259-f9fdd460ec99",
+      "alt": "Damaged grey car fender with cracked paint"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1760804462215-66e779745171",
+      "alt": "White car with front bumper removed for repair"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1727893304219-063d142ce6f3",
+      "alt": "Car being worked on in a car repair shop"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1727893294198-e85137574f5b",
+      "alt": "Warehouse filled with cars and trucks at an auto shop"
+    }
+  ],
+  "source": "ai_search"
+}
