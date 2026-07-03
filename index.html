@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kustom Auto Body | Collision Repair in Portage, IN</title>
+<meta name="description" content="Kustom Auto Body — collision repair, dent removal, paint, and frame straightening in Portage, Indiana. Call for a free estimate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --charcoal: #1a1a1a;
+    --steel: #2e2e33;
+    --rust: #c1440e;
+    --rust-dark: #9a350a;
+    --off-white: #f4f2ee;
+    --gray-text: #4a4a4a;
+    --border: #d8d4cc;
+    --radius: 4px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--charcoal);
+    background: var(--off-white);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  a { color: inherit; }
+
+  img, svg { display: block; max-width: 100%; }
+
+  .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--rust);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    z-index: 100;
+  }
+  .skip-link:focus { left: 0; }
+
+  /* Header */
+  header {
+    background: var(--charcoal);
+    color: var(--off-white);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 3px solid var(--rust);
+  }
+  .nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 0;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+  }
+  .brand svg { flex-shrink: 0; }
+  nav ul {
+    list-style: none;
+    display: none;
+    gap: 1.75rem;
+  }
+  nav ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--off-white);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  nav ul li a:hover, nav ul li a:focus {
+    border-color: var(--rust);
+  }
+  .header-cta {
+    display: none;
+  }
+  @media (min-width: 780px) {
+    nav ul { display: flex; }
+    .header-cta {
+      display: inline-block;
+      background: var(--rust);
+      color: #fff;
+      padding: 0.55rem 1.1rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .header-cta:hover { background: var(--rust-dark); }
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      linear-gradient(160deg, rgba(20,20,20,0.92), rgba(20,20,20,0.75)),
+      repeating-linear-gradient(135deg, #2b2b2f 0px, #2b2b2f 2px, #232326 2px, #232326 40px);
+    color: #fff;
+    padding: 4rem 0 3.5rem;
+  }
+  .hero-inner {
+    max-width: 680px;
+  }
+  .hero .eyebrow {
+    color: var(--rust);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.1rem, 6vw, 3.2rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .hero p.lede {
+    font-size: 1.1rem;
+    color: #e2ded6;
+    margin-bottom: 2rem;
+    max-width: 55ch;
+  }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    transition: transform 0.15s, background 0.2s, color 0.2s;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary {
+    background: var(--rust);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--rust-dark); }
+  .btn-outline {
+    border-color: #fff;
+    color: #fff;
+    background: transparent;
+  }
+  .btn-outline:hover {
+    background: #fff;
+    color: var(--charcoal);
+  }
+
+  .hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .hero-facts div {
+    font-size: 0.9rem;
+    color: #cfc9bf;
+  }
+  .hero-facts strong {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    color: #fff;
+  }
+
+  /* Section base */
+  section { padding: 4rem 0; }
+  .section-head {
+    max-width: 640px;
+    margin-bottom: 2.5rem;
+  }
+  .section-head .tag {
+    color: var(--rust);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-head h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin-bottom: 0.75rem;
+  }
+  .section-head p {
+    color: var(--gray-text);
+  }
+
+  /* Services */
+  .services { background: #fff; }
+  .service-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 620px) {
+    .service-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 980px) {
+    .service-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .service-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    background: var(--off-white);
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--rust);
+  }
+  .service-card .icon {
+    width: 42px; height: 42px;
+    margin-bottom: 1rem;
+    color: var(--rust);
+  }
+  .service-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  .service-card p {
+    color: var(--gray-text);
+    font-size: 0.95rem;
+  }
+
+  .specialty-strip {
+    margin-top: 2.5rem;
+    background: var(--charcoal);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .specialty-strip h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.35rem;
+  }
+  .specialty-strip p {
+    color: #cfc9bf;
+    font-size: 0.95rem;
+    max-width: 60ch;
+  }
+  .specialty-tags {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .specialty-tags span {
+    background: var(--rust);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* About */
+  .about {
+    background: var(--off-white);
+  }
+  .about-grid {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  @media (min-width: 860px) {
+    .about-grid { grid-template-columns: 1.1fr 0.9fr; }
+  }
+  .about-copy p {
+    color: var(--gray-text);
+    margin-bottom: 1rem;
+  }
+  .about-list {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .about-list li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+  }
+  .about-list svg {
+    flex-shrink: 0;
+    color: var(--rust);
+    margin-top: 3px;
+  }
+  .about-panel {
+    background: var(--charcoal);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 2rem;
+    position: relative;
+  }
+  .about-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, rgba(193,68,14,0.08) 0, rgba(193,68,14,0.08) 2px, transparent 2px, transparent 20px);
+    border-radius: var(--radius);
+    pointer-events: none;
+  }
+  .about-panel h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .about-panel .rating-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .about-panel .rating-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.4rem;
+    color: var(--rust);
+  }
+  .about-panel .rating-sub {
+    font-size: 0.85rem;
+    color: #cfc9bf;
+  }
+  .about-panel p {
+    color: #cfc9bf;
+    font-size: 0.95rem;
+    position: relative;
+  }
+
+  /* Trust / transparency */
+  .trust {
+    background: #fff;
+  }
+  .trust-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 700px) {
+    .trust-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .trust-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .trust-card .num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: var(--rust);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .trust-card p {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+  }
+
+  /* Contact */
+  .contact {
+    background: var(--charcoal);
+    color: #fff;
+  }
+  .contact .section-head p { color: #cfc9bf; }
+  .contact-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 820px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .contact-card {
+    background: var(--steel);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border-left: 4px solid var(--rust);
+  }
+  .contact-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1.25rem;
+  }
+  .contact-line {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+  .contact-line svg {
+    color: var(--rust);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .contact-line a, .contact-line span {
+    color: #e2ded6;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .contact-line a:hover { color: #fff; text-decoration: underline; }
+  .contact-card .btn { margin-top: 0.5rem; }
+
+  .map-note {
+    background: var(--steel);
+    border-radius: var(--radius);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .map-note h3 { font-size: 1.15rem; }
+  .map-note p { color: #cfc9bf; font-size: 0.95rem; }
+
+  /* Footer */
+  footer {
+    background: #111;
+    color: #cfc9bf;
+    padding: 2.5rem 0 1.5rem;
+    font-size: 0.9rem;
+  }
+  .footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 1.25rem;
+  }
+  .footer-brand {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  .footer-cols {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .footer-cols h4 {
+    color: #fff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+  }
+  .footer-cols ul { list-style: none; }
+  .footer-cols ul li { margin-bottom: 0.4rem; }
+  .footer-cols a { color: #cfc9bf; text-decoration: none; }
+  .footer-cols a:hover { color: #fff; }
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #8a857c;
+  }
+  .footer-bottom a { color: #8a857c; text-decoration: underline; }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="#" class="brand" aria-label="Kustom Auto Body home">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 13L4.5 8.5C4.8 7.6 5.6 7 6.5 7H17.5C18.4 7 19.2 7.6 19.5 8.5L21 13" stroke="#c1440e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="2.5" y="13" width="19" height="5.5" rx="1.2" stroke="#ffffff" stroke-width="1.8"/>
+        <circle cx="6.5" cy="18.5" r="1.6" fill="#ffffff"/>
+        <circle cx="17.5" cy="18.5" r="1.6" fill="#ffffff"/>
+      </svg>
+      Kustom Auto Body
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#trust">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:+12197625216" class="header-cta">Call (219) 762-5216</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Portage, Indiana &middot; US-6 Corridor</p>
+      <h1>Straight Panels. Solid Paint. No Runaround.</h1>
+      <p class="lede">Kustom Auto Body is a locally operated collision repair shop serving Portage and Northwest Indiana. We fix what the wreck broke &mdash; frame, paint, and dents &mdash; and we help you deal with the insurance company along the way.</p>
+      <div class="cta-row">
+        <a href="tel:+12197625216" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 14.9C17.7 15.3 19 15.5 20.3 15.5C20.9 15.5 21.4 16 21.4 16.6V20.3C21.4 20.9 20.9 21.4 20.3 21.4C10.5 21.4 2.6 13.5 2.6 3.7C2.6 3.1 3.1 2.6 3.7 2.6H7.4C8 2.6 8.5 3.1 8.5 3.7C8.5 5 8.7 6.3 9.1 7.5C9.2 7.9 9.1 8.3 8.8 8.6L6.6 10.8Z" stroke="#fff" stroke-width="1.6"/></svg>
+          Call for a Free Estimate
+        </a>
+        <a href="#contact" class="btn btn-outline">Get Directions</a>
+      </div>
+      <div class="hero-facts">
+        <div><strong>Portage, IN</strong>Locally operated shop</div>
+        <div><strong>US-6</strong>Easy to find, easy to reach</div>
+        <div><strong>Insurance</strong>Claim assistance included</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="tag">What We Do</p>
+        <h2>Full-Service Collision &amp; Bodywork</h2>
+        <p>From a fender bender to a frame-bent wreck, we handle the repair start to finish &mdash; and we'll walk you through the insurance paperwork so you're not doing it alone.</p>
+      </div>
+      <div class="service-grid">
+
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 13L4.5 8.5C4.8 7.6 5.6 7 6.5 7H17.5C18.4 7 19.2 7.6 19.5 8.5L21 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="2.5" y="13" width="19" height="5.5" rx="1.2" stroke="currentColor" stroke-width="1.6"/><circle cx="6.5" cy="18.5" r="1.4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="18.5" r="1.4" stroke="currentColor" stroke-width="1.4"/></svg>
+          <h3>Collision Repair</h3>
+          <p>Full structural and cosmetic repair after an accident, done right the first time.</p>
+        </div>
+
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20L14 10M14 10L20 4M14 10L10 6M14 10L18 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="17" r="2" stroke="currentColor" stroke-width="1.6"/></svg>
+          <h3>Auto Body Repair</h3>
+          <p>Panel repair and replacement to get your vehicle's body back to factory shape.</p>
+        </div>
+
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 8.5V12L14.5 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <h3>Dent Removal</h3>
+          <p>Door dings and deeper dents smoothed out without leaving a trace.</p>
+        </div>
+
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 17L14 7L18 11L8 21H4V17Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 7L17 4L20 7L17 10" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <h3>Paint &amp; Refinishing</h3>
+          <p>Color-matched paint and finish work that blends seamlessly with your vehicle.</p>
+        </div>
+
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="10" width="18" height="4" stroke="currentColor" stroke-width="1.6"/><path d="M7 10V6M17 10V6M7 18V14M17 18V14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <h3>Frame Straightening</h3>
+          <p>Precision frame correction to restore proper alignment and structural safety.</p>
+        </div>
+
+        <div class="service-card">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3L20 6.5V11.5C20 16 16.6 19.7 12 21C7.4 19.7 4 16 4 11.5V6.5L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12L11 14L15.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Insurance Claim Assistance</h3>
+          <p>We help you navigate the claims process so repairs move faster, not slower.</p>
+        </div>
+
+      </div>
+
+      <div class="specialty-strip">
+        <div>
+          <h3>Custom Bodywork &amp; Restoration</h3>
+          <p>Beyond standard collision jobs, we take on custom bodywork and full auto body restorations for owners who want their vehicle done a specific way.</p>
+        </div>
+        <div class="specialty-tags">
+          <span>Custom Bodywork</span>
+          <span>Restoration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <p class="section-head tag" style="margin-bottom:0.5rem;">Who We Are</p>
+        <h2 style="font-size:clamp(1.6rem,4vw,2.2rem); margin-bottom:1rem;">A Local Shop That Does the Work Right</h2>
+        <p>Kustom Auto Body is based right on US-6 in Portage, serving drivers throughout Northwest Indiana. We're not a franchise and we're not a big-box chain &mdash; we're a local shop that repairs cars the way they should be repaired.</p>
+        <p>If your vehicle needs collision work, bodywork, or a repaint after an accident, bring it in and we'll give you a straight answer on what it needs and what it'll cost.</p>
+        <ul class="about-list">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13L9.5 17.5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Locally operated, on US-6 in Portage
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13L9.5 17.5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Direct phone contact for fast estimate requests
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13L9.5 17.5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Serving Portage and the surrounding Northwest Indiana community
+          </li>
+        </ul>
+      </div>
+      <div class="about-panel">
+        <h3>Straight With Every Customer</h3>
+        <div class="rating-row">
+          <span class="rating-num">3.4</span>
+          <span class="rating-sub">out of 5<br>based on 43 reviews</span>
+        </div>
+        <p>We know that number doesn't tell the whole story on its own. That's why we're putting our services, contact info, and process out in the open &mdash; call us, ask questions, and judge the work for yourself.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust" id="trust">
+    <div class="container">
+      <div class="section-head">
+        <p class="tag">Why Call Us</p>
+        <h2>No-Nonsense, Straightforward Repair</h2>
+        <p>We keep it simple: tell us what happened, we look at the vehicle, and we give you a real answer on repair and cost.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <span class="num">1</span>
+          <p>Local shop on US-6 &mdash; easy to find, easy to reach by phone</p>
+        </div>
+        <div class="trust-card">
+          <span class="num">2</span>
+          <p>Insurance claim assistance included with every collision repair</p>
+        </div>
+        <div class="trust-card">
+          <span class="num">3</span>
+          <p>Custom bodywork and full restoration available, not just standard repair</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <p class="tag" style="color:var(--rust);">Get In Touch</p>
+        <h2>Request a Repair Estimate</h2>
+        <p>Call the shop directly or stop by our Portage location to get a look at your vehicle and a straight-up estimate.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact Details</h3>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8C8 13.6 10.4 16 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 14.9C17.7 15.3 19 15.5 20.3 15.5C20.9 15.5 21.4 16 21.4 16.6V20.3C21.4 20.9 20.9 21.4 20.3 21.4C10.5 21.4 2.6 13.5 2.6 3.7C2.6 3.1 3.1 2.6 3.7 2.6H7.4C8 2.6 8.5 3.1 8.5 3.7C8.5 5 8.7 6.3 9.1 7.5C9.2 7.9 9.1 8.3 8.8 8.6L6.6 10.8Z" stroke="currentColor" stroke-width="1.6"/></svg>
+            <a href="tel:+12197625216">(219) 762-5216</a>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C12 21 19 14.6 19 9.5C19 5.4 15.9 2.5 12 2.5C8.1 2.5 5 5.4 5 9.5C5 14.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span>5409 US-6, Portage, IN 46368</span>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7V12L15.2 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <span>Call ahead to confirm shop hours</span>
+          </div>
+          <a href="tel:+12197625216" class="btn btn-primary">Call (219) 762-5216</a>
+        </div>
+        <div class="map-note">
+          <h3>Find Us on US-6</h3>
+          <p>Kustom Auto Body sits on the US-6 corridor in Portage, convenient to drivers from across Northwest Indiana. Bring your vehicle in for a hands-on look and an honest estimate.</p>
+          <p><strong>5409 US-6, Portage, IN 46368</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Kustom Auto Body</div>
+        <p style="max-width:32ch;">Collision repair and bodywork, done straight, in Portage, Indiana.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Collision Repair</a></li>
+            <li><a href="#services">Dent Removal</a></li>
+            <li><a href="#services">Paint &amp; Refinishing</a></li>
+            <li><a href="#services">Frame Straightening</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#trust">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+12197625216">(219) 762-5216</a></li>
+            <li><span>5409 US-6, Portage, IN 46368</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Kustom Auto Body. All rights reserved.</span>
+      <span>Website sample by Wild Card Creative Co.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
